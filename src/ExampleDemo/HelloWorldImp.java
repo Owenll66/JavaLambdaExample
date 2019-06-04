@@ -1,4 +1,4 @@
-package Example;
+package ExampleDemo;
 
 public class HelloWorldImp implements HelloWorld {
 

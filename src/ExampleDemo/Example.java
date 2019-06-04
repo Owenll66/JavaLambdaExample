@@ -1,7 +1,8 @@
-package Example;
+package ExampleDemo;
 
-public class Main {
-	public static void main(String[] args) {
+public class Example {
+	public void showExample1() 
+	{
 		System.out.println("************** Example 1 **************");
 		/* single line lambda expression does not need curly braces
 		 * lambda expression works the same way as implementing a class
@@ -23,15 +24,9 @@ public class Main {
 			}
 		};
 		instance.greet();
-		
-		//single line does not need a return statement
-		Addition add = (int a, int b)-> a + b;
+	}
+	public void showExample2() 
+	{
+		System.out.println("************** Example 2 **************");
 	}
 }
-
-/*A interface can only have one function for the use of lambda expression.*/
-interface Addition
-{
-	int add(int a, int b);
-}
-
