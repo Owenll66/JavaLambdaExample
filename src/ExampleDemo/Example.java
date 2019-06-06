@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Example {
 	public void showExample1() 
@@ -112,6 +113,32 @@ public class Example {
 			System.out.println(b);
 		}
 	}
+	
+	public void showExample6() 
+	{
+		System.out.println("************** Example 6 **************");
+		List<Box> boxes = Arrays.asList(
+				new Box("box1",1,1,1),
+				new Box("abc",2,2,2),
+				new Box("abd",3,3,3),
+				new Box("bbd",4,4,4),
+				new Box("efg",5,5,5)
+				);
+		System.out.println("print box which name starts with \"a\"");
+		printConditionally(boxes, p -> p.getName().startsWith("a"));
+	}
+	//java util.function.* provide generic interfaces, hence we do not have to define interface by ourselves
+	private static void printConditionally(List<Box> boxes, Predicate<Box> predicate) 
+	{
+		for(Box b : boxes) 
+		{
+			if(predicate.test(b))
+				System.out.println(b);
+		}
+	}
+	
+	
+	
 }
 
 /* Functional interface: an interface only have one abstract method
