@@ -53,13 +53,42 @@ public class Example {
 		helloWorld.greet();
 	}
 	
+	public void showExample4() 
+	{
+		System.out.println("************** Example 4 **************");
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("override runnable interface");	
+			}});
+		thread.run();
+		/* NOTE:
+		 * Runnable interface only have one method called "run()". 
+		 * Hence, we can replace it with lambda expression
+		 * If an interface has more than one methods, we can not write a lambda function of that type
+		 * */
+		Thread lambdaThread = new Thread(()->System.out.println("run lambda expression"));
+		lambdaThread.run();
+	}
+	
 	
 }
 
+/* Functional interface: an interface only have one abstract method
+ * @FunctionalInterface annotation force an interface only have one abstract method
+ * For the sake of lambda expression*/
+
+@FunctionalInterface
 interface HelloWorld {
 	void greet();
+	default void hi() 
+	{
+		System.out.println("hi");
+	}
 }
-
+/* 
+ * */
+@FunctionalInterface
 interface SringLength {
 	int getStringLength(String s);
 }
