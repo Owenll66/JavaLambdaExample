@@ -1,5 +1,11 @@
 package ExampleDemo;
 
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class Example {
 	public void showExample1() 
 	{
@@ -71,7 +77,41 @@ public class Example {
 		lambdaThread.run();
 	}
 	
-	
+	public void showExample5() 
+	{
+		System.out.println("************** Example 5 **************");
+		List<Box> boxes = Arrays.asList(
+				new Box("box1",1,1,1),
+				new Box("abc",2,2,2),
+				new Box("abd",3,3,3),
+				new Box("bbd",4,4,4),
+				new Box("efg",5,5,5)
+				);
+		
+		System.out.println("Sort by implementing Comparator interface ascendingly");
+		//Sort the List according to the box name -- ass
+		Collections.sort(boxes, new Comparator<Box>() {
+			@Override
+			public int compare(Box o1, Box o2) {
+				return o1.getName().compareTo(o2.getName());
+			}});
+		
+		for(Box b : boxes) 
+		{
+			System.out.println(b);
+		}
+		
+		System.out.println();
+		
+		System.out.println("Sort by lambda expression descendingly");
+		//sort the List according to the box name -- descending order
+		Collections.sort(boxes, ((box1, box2)->box2.getName().compareTo(box1.getName()) ));
+		
+		for(Box b : boxes) 
+		{
+			System.out.println(b);
+		}
+	}
 }
 
 /* Functional interface: an interface only have one abstract method

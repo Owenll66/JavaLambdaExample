@@ -16,6 +16,9 @@ public class Main {
 		
 		example.showExample4();
 		System.out.println();
+		
+		example.showExample5();
+		System.out.println();
 	}
 }
 
