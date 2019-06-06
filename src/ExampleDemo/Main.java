@@ -8,7 +8,10 @@ public class Main {
 		System.out.println();
 		
 		example.showExample2();
-		//System.out.println();
+		System.out.println();
+		
+		example.showExample3();
+		System.out.println();
 	}
 }
 

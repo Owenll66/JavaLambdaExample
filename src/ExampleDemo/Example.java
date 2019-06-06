@@ -25,8 +25,41 @@ public class Example {
 		};
 		instance.greet();
 	}
+	
 	public void showExample2() 
 	{
 		System.out.println("************** Example 2 **************");
+		/*
+		 * Do not have to specify the input argument type
+		 * Same as: "SringLength lambdaGetLength = (String s)->s.length();"
+		 * 
+		 * If there is only one argument, brackets can be eliminated
+		 * Same as: "SringLength lambdaGetLength = s->s.length()"
+		 * */
+		SringLength lambdaGetLength = (s)->s.length();
+		int sum = lambdaGetLength.getStringLength("Hello World");
+		System.out.println("The String Length is " + String.valueOf(sum));
+		
 	}
+	
+	public void showExample3() 
+	{
+		System.out.println("************** Example 3 **************");
+		passLambda(()->System.out.println("Pass lambda expression as an argument"));
+	}
+	
+	public void passLambda(HelloWorld helloWorld) 
+	{
+		helloWorld.greet();
+	}
+	
+	
+}
+
+interface HelloWorld {
+	void greet();
+}
+
+interface SringLength {
+	int getStringLength(String s);
 }
