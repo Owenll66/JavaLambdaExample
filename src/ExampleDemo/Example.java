@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Example {
@@ -125,15 +126,15 @@ public class Example {
 				new Box("efg",5,5,5)
 				);
 		System.out.println("print box which name starts with \"a\"");
-		printConditionally(boxes, p -> p.getName().startsWith("a"));
+		printConditionally(boxes, p -> p.getName().startsWith("a"), p->System.out.println(p));
 	}
 	//java util.function.* provide generic interfaces, hence we do not have to define interface by ourselves
-	private static void printConditionally(List<Box> boxes, Predicate<Box> predicate) 
+	private static void printConditionally(List<Box> boxes, Predicate<Box> predicate, Consumer<Box> consumer) 
 	{
 		for(Box b : boxes) 
 		{
 			if(predicate.test(b))
-				System.out.println(b);
+				consumer.accept(b);
 		}
 	}
 	
