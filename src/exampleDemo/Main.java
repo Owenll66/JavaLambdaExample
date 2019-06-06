@@ -1,4 +1,4 @@
-package ExampleDemo;
+package exampleDemo;
 
 public class Main {
 	

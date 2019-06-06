@@ -1,4 +1,4 @@
-package ExampleDemo;
+package exampleDemo;
 
 
 import java.util.Arrays;
@@ -91,7 +91,7 @@ public class Example {
 				);
 		
 		System.out.println("Sort by implementing Comparator interface ascendingly");
-		//Sort the List according to the box name -- ass
+		//Sort the List according to the box name -- ascending order
 		Collections.sort(boxes, new Comparator<Box>() {
 			@Override
 			public int compare(Box o1, Box o2) {
