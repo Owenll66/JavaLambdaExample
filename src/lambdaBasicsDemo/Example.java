@@ -1,4 +1,4 @@
-package exampleDemo;
+package lambdaBasicsDemo;
 
 
 import java.util.Arrays;

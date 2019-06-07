@@ -1,4 +1,4 @@
-package exampleDemo;
+package lambdaBasicsDemo;
 
 public class Box {
 	private String name;

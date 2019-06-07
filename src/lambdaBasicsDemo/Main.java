@@ -1,4 +1,4 @@
-package exampleDemo;
+package lambdaBasicsDemo;
 
 public class Main {
 	
