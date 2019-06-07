@@ -31,12 +31,23 @@ public class Example {
 		};
 	}
 	
-	
-	
-	public void closureExample() 
+	public void showClosureExample() 
 	{
+		System.out.println("************* Lambda Closure Example *************");
+		int a = 10;
+		/* variable "a" in the lambda expression is expected to be an effectively final type (cannot be changed)
+		 * effectively final type works same as final type, without the "final" keyword
+		 * error will occur if making changes to variable "a"*/
+		process(10, p->System.out.println(p+a));
 		
 	}
+	public static void process(int i, Printer printer) 
+	{
+		printer.print(i);
+	}
 	
-	
+	interface Printer
+	{
+		void print(int i);
+	}
 }

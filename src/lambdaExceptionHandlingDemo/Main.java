@@ -1,6 +1,6 @@
 package lambdaExceptionHandlingDemo;
 
-public class ExceptionHandling {
+public class Main {
 	public static void main(String[] args) 
 	{
 		Example example = new Example();
@@ -8,6 +8,8 @@ public class ExceptionHandling {
 		example.showLambdaExceptionHandlingExample();
 		System.out.println();
 		
+		example.showClosureExample();
+		System.out.println();
 		
 	}
 
