@@ -6,7 +6,7 @@ public class Box {
 	private int width;
 	private int height;
 	
-	Box(String name, int length, int width, int height)
+	public Box(String name, int length, int width, int height)
 	{
 		this.name = name;
 		this.length = length;
@@ -41,6 +41,6 @@ public class Box {
 	
 	public String toString() 
 	{
-		return "Box: [" + name + " " + String.valueOf(length) + " " + String.valueOf(width) + " " + String.valueOf(height) +"]";
+		return "Box: [" + name + " l :" + String.valueOf(length) + " w :" + String.valueOf(width) + " h :" + String.valueOf(height) +"]";
 	}
 }
