@@ -45,11 +45,24 @@ public class Example {
 	public void showExample2() 
 	{
 		System.out.println("************** Example 2 **************");
-		/*loop through the Collection and add two filters*/
+		/*loop through the Collection and add two filters
+		 * if the object in the stream satisfies the conditions in the filter then execute forEach function*/
 		boxes.stream()
+			.filter(p->p.getName().startsWith("b"))
+			.filter(p->p.getHeight()>2)
+			.forEach(System.out::println);
+		
+		System.out.println("\nloop through parallel stream could be potentially faster");
+		boxes.parallelStream()
 		.filter(p->p.getName().startsWith("b"))
 		.filter(p->p.getHeight()>2)
 		.forEach(System.out::println);
 		
+		System.out.println("Count number:");
+		long a = boxes.stream()
+				.filter(p->p.getName().startsWith("b"))
+				.filter(p->p.getHeight()>2)
+				.count();
+		System.out.println(a);
 	}
 }
